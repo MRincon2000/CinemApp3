@@ -28,7 +28,7 @@ public class Seleccionhorario extends javax.swing.JFrame {
     private Seleccionpeli daddy;
     private Usuario actual;
     Calendar calendario= Calendar.getInstance();
-    
+    private int hora;
 
     
     
@@ -47,12 +47,7 @@ public class Seleccionhorario extends javax.swing.JFrame {
         for(int i=0;i<7;i++){   
             modelo.addRow( new Object[]{peli.getHorarios()[i].getHorario()});
         }
-        int hora=calendario.get(Calendar.HOUR_OF_DAY);
-        for(int e=0;e<7;e++){
-            if(hora>= peli.getHorarios()[e].getHorario()){
-                modelo.removeRow(0);
-            }
-        }
+        hora=calendario.get(Calendar.HOUR_OF_DAY);
         
         
         
@@ -189,7 +184,11 @@ public class Seleccionhorario extends javax.swing.JFrame {
     private void TablahorariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablahorariosMouseClicked
         // TODO add your handling code here:
         int seleccion= Tablahorarios.getSelectedRow();
+        if(seleccion>(hora-9)/2)
         numero=seleccion;
+        else{
+            numero=-1;
+        }
     }//GEN-LAST:event_TablahorariosMouseClicked
 
     private void btnAccederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccederActionPerformed

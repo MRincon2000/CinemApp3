@@ -261,7 +261,10 @@ public class GestionCuenta extends javax.swing.JFrame {
         String nclave=this.txtClave.getText();
         
         if(nnombre.length()!=0 && ncorreo.length()!=0 && nclave.length()!=0){
-        usuario.editar(nnombre, ncorreo, nclave);        
+        usuario.editar(nnombre, ncorreo, nclave);
+        for(int i=0;i<usuario.getCompradas().size();i++){
+           usuario.getCompradas().get(i).setCliente(usuario.getNombre());
+        }
         JOptionPane.showMessageDialog(null, "Operacion exitosa");
         }
     }//GEN-LAST:event_btnEditarActionPerformed
