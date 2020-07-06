@@ -25,7 +25,7 @@ private double duracion;
         int hora= 9;
        
         for(int i=0;i<7;i++){
-           horarios[i] = new Horario(hora);
+           horarios[i] = new Horario(hora,this.nombre);
             hora=hora+2;
         }  
     }

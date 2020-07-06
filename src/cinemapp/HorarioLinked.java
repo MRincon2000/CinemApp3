@@ -24,7 +24,7 @@ public class HorarioLinked {
         int count=0;
         int asci=65;
         for(int i=0;i<100;i++){
-            this.sillas[i]= new Silla(fila,numero);
+            this.sillas[i]= new Silla(fila,numero,"sss");
         numero=numero+1;
         count++;
         if(count%10==0){
